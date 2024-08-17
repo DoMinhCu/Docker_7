@@ -5,4 +5,3 @@ before_install:
     - docker build -t dominhcu/mycode -f Dockerfile.dev .
 script:
     - docker run -e CI=true DoMinhCu/Docker_7 npm run test
-
