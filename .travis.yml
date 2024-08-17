@@ -1,8 +1,11 @@
 sudo: required
-services:
-    - docker
-before_install:
-    - docker build -t dominhcu/section7 -f Dockerfile.dev .
-script:
-    - docker run -e CI=true dominhcu/section7 npm run test -- --coverage
+language: generic
 
+services:
+  - docker
+
+before_install:
+  - docker build -t dominhcu/section7 -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true dominhcu/section7 npm run test
