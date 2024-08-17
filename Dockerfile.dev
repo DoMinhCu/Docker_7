@@ -1,0 +1,13 @@
+FROM node:16-alpine
+
+WORKDIR '/app'
+
+#Sao chép file "package.json" từ máy cục bộ của bạn vào thư mục hiện tại(thư mục '/app')trong container
+# '.' đại diện cho thư mục hiện tại trong container, tức là '/app'
+COPY package.json .
+
+RUN npm install
+# Sao chép thi mục máy host vào thư mục mặc định trong container('/app')
+COPY . .
+
+CMD [ "npm", "run", "start" ]
