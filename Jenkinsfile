@@ -1,7 +1,7 @@
 pipeline {
     agent any   
     stages{
-        stages('Clone'){
+        stage('Clone') {
             steps{
                 https://github.com/DoMinhCu/Docker_7.git
             }
