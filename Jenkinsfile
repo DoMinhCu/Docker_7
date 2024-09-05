@@ -58,3 +58,17 @@ pipeline {
         }
     }
 }
+pipeline {
+    agent {
+        docker { image 'node:alpine' }
+    }
+    stages {
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    docker.build('your-image-name')
+                }
+            }
+        }
+    }
+}
